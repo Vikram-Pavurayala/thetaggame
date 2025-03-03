@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplayer Tag Game</title>
+    <style>
+        body { margin: 0; background-color: aqua; }
+        canvas { display: block; }
+        #menu, #roomLobby { 
+            position: fixed; 
+            top: 20px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            z-index: 100; 
+            background: rgba(0, 0, 0, 0.7); 
+            padding: 20px; 
+            border-radius: 8px; 
+            text-align: center; 
+            color: white; 
+        }
+        #menu.hidden, #roomLobby.hidden { display: none; }
+        input { 
+            padding: 8px; 
+            margin: 5px 0; 
+            border-radius: 4px; 
+            border: 1px solid #666; 
+            background: rgba(255, 255, 255, 0.9); 
+        }
+        button { 
+            padding: 8px 16px; 
+            background: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+        }
+        button:hover { background: #45a049; }
+        #playerList { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <h3>Multiplayer Tag Game</h3>
+        <input type="text" id="playerNameInput" maxlength="7" placeholder="Enter name (max 7 chars)">
+        <br>
+        <button onclick="createRoom()">Create Room</button>
+        <button onclick="showJoinRoom()">Join Room</button>
+        <br>
+        <input type="text" id="roomCodeInput" placeholder="Enter room code" style="display: none;">
+        <button id="joinRoomBtn" onclick="joinRoom()" style="display: none;">Join</button>
+    </div>
+
+    <div id="roomLobby" class="hidden">
+        <h3>Room: <span id="roomCode"></span></h3>
+        <div id="playerList"></div>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
