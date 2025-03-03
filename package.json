@@ -1,21 +1,17 @@
 {
-  "name": "threejs-vite-express-socketio",
+  "name": "three-js-hide-and-seek",
   "version": "1.0.0",
-  "description": "A project using Three.js, Vite, Express, and Socket.io",
+  "description": "A multiplayer hide and seek game using Three.js and Socket.IO",
   "main": "server.js",
   "scripts": {
-    "dev": "vite",
-    "build": "npx vite",
-    "serve": "node server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "npx vite"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "socket.io": "^4.7.2",
-    "three": "^0.160.0"
+    "socket.io": "^4.7.2"
   },
-  "devDependencies": {
-    "vite": "^5.0.0"
-  },
-  "type": "module"
+  "engines": {
+    "node": ">=14.x"
+  }
 }
