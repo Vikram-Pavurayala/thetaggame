@@ -1,18 +1,27 @@
 {
-  "name": "three-js-hide-and-seek",
+  "name": "multiplayer-tag-game",
   "version": "1.0.0",
-  "description": "A multiplayer hide and seek game using Three.js and Socket.IO",
+  "description": "3D multiplayer tag game with Three.js and Socket.IO",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "npx vite"
+    "dev:server": "nodemon server.js",
+    "dev:client": "vite",
+    "build": "vite build",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "socket.io": "^4.7.2",
-    "three": "^0.160.0"
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1",
+    "vite": "^4.4.9",
+    "three": "^0.155.0"
   },
   "engines": {
-    "node": ">=14.x"
+    "node": ">=14.0.0"
   }
 }
