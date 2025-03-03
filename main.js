@@ -4,7 +4,7 @@ import { Water } from 'three/examples/jsm/objects/Water';
 import { Sky } from 'three/examples/jsm/objects/Sky';
 
 // Socket.IO setup
-const socket = io('http://localhost:3000');
+const socket = io(window.location.origin);
 
 // Global variables
 let roomCode = null;
