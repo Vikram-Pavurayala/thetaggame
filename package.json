@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npx vite",
     "serve": "node server.js",
     "start": "node server.js"
   },
