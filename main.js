@@ -204,6 +204,7 @@ socket.on('gameStarted', ({ hunter }) => {
     isHunter = socket.id === hunter;
     hunterId = hunter;
     document.getElementById('roomLobby').classList.add('hidden');
+    document.getElementById('gameFrame').style.display = 'none';
     createLoadingScreen();
     loadGame(playerName);
 });
