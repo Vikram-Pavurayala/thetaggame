@@ -421,11 +421,6 @@ function animateCharacter(character) {
             leftArm.rotation.set(0, 0, 0);
             character.userData.isWaving = false;
             character.userData.waveTime = 0; // Reset waveTime
-
-            // Add this line to reset the character state
-            if (character === window.playerCharacter) {
-                characterState.isWaving = false;
-            }
         }
     } else if (character.userData.isMoving) {
         character.userData.animationTime += 0.1;
@@ -589,7 +584,6 @@ function loadGame(name) {
     character.position.set(Math.floor(Math.random() * 101), 2.4, 0);
     scene.add(character);
     
-    window.playerCharacter = character;
 
     
     if (isHunter) {
@@ -625,7 +619,7 @@ function loadGame(name) {
         if (character.userData.caught) return;
         keys[event.key.toLowerCase()] = true;
         keys[event.key] = true;
-        if (event.key.toLowerCase() === 'e' && !characterState.isWaving && !character.userData.isWaving) {
+        if (event.key.toLowerCase() === 'e' && !character.userData.isWaving) {
             characterState.isWaving = true;
             characterState.waveTime = 0;
             character.userData.isWaving = true;
